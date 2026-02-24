@@ -5,6 +5,12 @@ const app = express();
 app.use(express.json());
 
 
+let count = 0;
+
+app.post('/increment', (req, res) => {
+  count += 1;
+  res.json({ count });
+});
 app.get('/', (req, res) => {
   res.json({
     status: 'ok',
